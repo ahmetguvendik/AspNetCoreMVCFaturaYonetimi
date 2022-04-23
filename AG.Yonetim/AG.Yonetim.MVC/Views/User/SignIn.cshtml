@@ -1,0 +1,22 @@
+﻿@model SignInUserModel
+
+<form asp-action="SignIn" asp-controller="User" method="post">
+    <div>
+        <label>Adınızı Giriniz</label>
+        <input asp-for=@Model.UserName />
+
+    </div>
+    <br />
+
+    <div>
+        <label>Şifrenizi Giriniz</label>
+        <input type="password" asp-for=@Model.Password />
+    </div>
+
+    <div>
+        <button>
+            Giriş Yap
+        </button>
+    </div>
+
+</form>

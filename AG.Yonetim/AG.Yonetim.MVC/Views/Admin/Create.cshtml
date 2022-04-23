@@ -1,0 +1,63 @@
+﻿@model CreateUserAdminPanelModel
+
+<form asp-action="Create" asp-controller="Admin" method="post">
+
+    <div>
+        <label>TC Kimlik Numaranızı Giriniz</label>
+        <input type="number" asp-for=@Model.TcNo />
+    </div>
+
+    <br />
+
+    <div>
+        <label>Adınızı ve Soyadınızı Giriniz</label>
+        <input asp-for=@Model.UserName />
+    </div>
+
+     <br />
+
+    <div>
+        <label>Email Giriniz</label>
+        <input type="email" asp-for=@Model.Email />
+    </div>
+
+     <br />
+
+    <div>
+        <label>Şifre Giriniz</label>
+        <input type="password" asp-for=@Model.Password />
+    </div>
+
+     <br />
+
+    <div>
+        <label>Telefon Numarası Giriniz</label>
+        <input type="number" asp-for=@Model.PhoneNumber />
+    </div>
+
+     <br />
+
+    <div>
+        <label>Oturduğunuz Bloğu Giriniz</label>
+        <input type="number" asp-for=@Model.Block />
+    </div>
+
+     <br />
+
+    <div>
+        <label>Eviniz Oda Sayısını Giriniz</label>
+        <input type="number" asp-for=@Model.RoomNumber />
+    </div>
+
+     <br />
+
+    <div>
+        <label>Eğer Varsa Arabanızın Plaka Bilgisini Giriniz</label>
+        <input asp-for=@Model.CarInfo />
+    </div>
+    <div>
+        <button>
+            Kayıt Ol
+        </button>
+    </div>
+</form>

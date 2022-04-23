@@ -1,0 +1,22 @@
+﻿@using AG.Yonetim.MVC.Data.Entities
+@model IEnumerable<BillUserViewModel>
+
+<table>
+    <thead>
+        <tr>
+            <th>Fatura Adı</th>
+            <th>Fatura Fiyatı</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th>@item.Name</th>
+                <th>@item.Price</th>
+            </tr>
+        }
+
+    </tbody>
+
+</table>

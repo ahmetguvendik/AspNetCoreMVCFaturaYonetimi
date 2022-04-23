@@ -1,0 +1,22 @@
+﻿@model CreateBillModel
+
+<form asp-action="Bill" asp-controller="Admin" method="post">
+    <input type="hidden" asp-route-id=@Model.Id />
+    <div>
+        <label>Fatura Adını Girinz</label>
+        <input asp-for=@Model.Name />
+    </div>
+
+    <br />
+
+    <div>
+        <label>Fatura Fiyatını Giriniz</label>
+        <input type="number" asp-for=@Model.Price />
+    </div>
+
+    <div>
+        <button>
+            Kaydet
+        </button>
+    </div>
+</form>

@@ -1,0 +1,41 @@
+﻿@using AG.Yonetim.MVC.Data.Entities
+@model List<AppUser>
+
+<table>
+    <thead>
+        <tr>
+            <th>TC</th>
+            <th>Adı</th>
+            <th>Email</th>
+            <th>Telefon Numarası</th>
+            <th>Blok</th>
+            <th>Oda Sayısı</th>
+            <th>Araba Bilgisi</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th>@item.TcNo</th>
+                <th>@item.UserName</th>
+                <th>@item.Email</th>
+                <th>@item.PhoneNumber</th>
+                <th>@item.Block</th>
+                <th>@item.RoomNumber</th>
+                <th>@item.CarInfo</th>
+                <th><a asp-action="Update" asp-controller="Admin" asp-route-id=@item.Id>Güncelle</a></th>
+                <th><a asp-action="Remove" asp-controller="Admin" asp-route-id=@item.Id>Sil</a></th>
+                <th><a asp-action="Bill" asp-controller="Admin" asp-route-id=@item.Id>Fatura Ata</a></th>
+            </tr>
+        }
+
+    </tbody>
+
+</table>
+
+<a asp-action="Create" asp-controller="Admin">
+    Yeni Kişi Ekleme
+</a>

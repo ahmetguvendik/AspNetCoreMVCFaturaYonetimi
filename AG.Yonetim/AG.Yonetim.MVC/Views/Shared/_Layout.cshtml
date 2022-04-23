@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+
+<body>
+
+    @if (User.Identity.IsAuthenticated && User.IsInRole("Member"))
+    {
+        <a class="nav-link" asp-action="SignOut" asp-controller="User">Çıkış Yap</a>
+    }
+    @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+    {
+        <a class="nav-link" asp-action="SignOut" asp-controller="User">Çıkış Yap</a>
+    }
+    @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+    {
+        <a class="nav-link" asp-action="Index" asp-controller="Admin">Kullanıcıları Getir</a>
+        <a class="nav-link" asp-action="GetBill" asp-controller="Admin">Fatura Getir</a>
+    }
+    @if (User.Identity.IsAuthenticated && User.IsInRole("Member"))
+    {
+       // <a class="nav-link" asp-action="Index" asp-controller="Member">Fatura Görüntüle</a>
+    }
+
+    <div>
+        @RenderBody()
+    </div>
+
+    @if (User.Identity.IsAuthenticated == false)
+    {
+        <h3><a asp-action="Create" asp-controller="User">Kayıt Ol</a></h3>
+        <h3><a asp-action="SignIn" asp-controller="User">Giriş Yap</a></h3>
+    }
+</body>
+</html>
